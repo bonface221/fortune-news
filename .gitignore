@@ -1,0 +1,4 @@
+env_news/
+*.pyc
+instance/
+start.sh
