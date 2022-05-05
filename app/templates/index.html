@@ -1,0 +1,28 @@
+{% extends 'base.html'%}
+
+
+<!-- styles block -->
+
+{% block styles%} 
+    {{ super() }}
+    <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+{% endblock %} 
+
+<!-- content block -->
+{% block content %} 
+<div class="container-fluid">
+    <h3>Fortune news</h3>
+    <ul >
+        <div style="display: flex;flex-wrap: wrap;gap: 2rem;">
+            {% for item in bbc %}
+            <div style="flex: 0 1 30rem">
+                <img style="height: 20rem;" src="{{item.image}}" alt="">
+                <p class="p-3">{{item.description}}</p>                
+            </div>
+
+            {% endfor %}            
+        </div>
+
+    </ul>
+</div>
+{% endblock %}
